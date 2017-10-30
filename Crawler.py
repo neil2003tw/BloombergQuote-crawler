@@ -43,5 +43,5 @@ for stock_cat,stock_id in stock_list[1:5]:
 with open('stock_data.csv', 'a') as csv_file:
     writer = csv.writer(csv_file)
     for stock_cat, name, price in stock_data:
-        writer.writerow([stock_cat, name, price, dt.now()])
-        
+        writer.writerow([stock_cat, name, float(price.replace(',',''))
+, dt.now()])
